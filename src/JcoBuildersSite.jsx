@@ -139,7 +139,33 @@ export default function JcoBuildersSite() {
         </a>
       </section>
 
-      {/* Our Projects */}
+      {/* About Section */}
+      <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
+        <motion.h3
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-extrabold text-center text-[#16476A] mb-10"
+        >
+          About Us
+        </motion.h3>
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeIn}
+          transition={{ duration: 1 }}
+          className="text-center text-gray-700 max-w-3xl mx-auto text-lg"
+        >
+          At J.Lite Builders & Construction Services, we craft durable, elegant,
+          and modern structures that stand the test of time. With years of
+          experience and a passion for quality, we turn visions into reality.
+          Our team takes pride in every build — from residential homes to large-scale
+          commercial projects — ensuring satisfaction, precision, and reliability.
+        </motion.p>
+      </section>
+
+      {/* Our Projects Section */}
       <section id="projects" className="py-24 px-6 bg-gray-100">
         <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
           Our Projects
@@ -223,6 +249,77 @@ export default function JcoBuildersSite() {
           </div>
         </div>
       )}
+
+      {/* Services Section */}
+      <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
+        <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
+          Our Services
+        </h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Residential Construction",
+              desc: "We build elegant and long-lasting homes that combine comfort and modern design.",
+            },
+            {
+              title: "Commercial Development",
+              desc: "From offices to buildings, we deliver strong and efficient commercial spaces.",
+            },
+            {
+              title: "Renovation & Design",
+              desc: "Transforming spaces into beautiful, functional areas tailored to your vision.",
+            },
+          ].map((service, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeIn}
+              transition={{ duration: 0.8 + i * 0.2 }}
+              className="bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition"
+            >
+              <h4 className="font-semibold text-2xl text-[#132440] mb-3 text-center">
+                {service.title}
+              </h4>
+              <p className="text-gray-600 text-center">{service.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 px-6 bg-gray-100">
+        <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
+          Contact Us
+        </h3>
+        <form className="max-w-3xl mx-auto grid gap-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="border p-3 rounded-lg"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="border p-3 rounded-lg"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            className="border p-3 rounded-lg"
+          ></textarea>
+          <button className="bg-[#16476A] hover:bg-[#132440] text-white py-3 rounded-lg">
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#16476A] text-white text-center py-6">
+        <p>
+          &copy; {new Date().getFullYear()} J.Lite Builders & Construction Services. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
