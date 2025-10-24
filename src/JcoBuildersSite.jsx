@@ -399,7 +399,7 @@ export default function JcoBuildersSite() {
           <p className="text-gray-800 font-medium">
             Email:{" "}
             <a
-              href="mailto:info@jlitebuilders.com"
+              href="mailto:jlitebuilders@gmail.com"
               className="text-blue-700"
             >
               jlitebuilders@gmail.com
