@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Importing images for each sections of placeholder
+// Importing images for UAP section
 import uap14 from "./assets/images/uap/uap14.webp";
 import uap1 from "./assets/images/uap/uap1.jpg";
 import uap2 from "./assets/images/uap/uap2.jpg";
@@ -21,6 +21,41 @@ import structural from "./assets/images/uap/structural.jpg";
 import welding from "./assets/images/uap/welding.jpg";
 import metal from "./assets/images/uap/metal.jpg";
 
+// Importing images in Modern Residential section
+import res1 from "./assets/images/residential/res1.jpg";
+import res3 from "./assets/images/residential/res3.jpg";
+import res4 from "./assets/images/residential/res4.jpg";
+import res5 from "./assets/images/residential/res5.jpg";
+import res6 from "./assets/images/residential/res6.jpg";
+import res7 from "./assets/images/residential/res7.jpg";
+import res8 from "./assets/images/residential/res8.jpg";
+import res9 from "./assets/images/residential/res9.jpg";
+import res10 from "./assets/images/residential/res10.jpg";
+import res11 from "./assets/images/residential/res11.jpg";
+import res12 from "./assets/images/residential/res12.jpg";
+import res13 from "./assets/images/residential/res13.jpg";
+import res14 from "./assets/images/residential/res14.jpg";
+import res15 from "./assets/images/residential/res15.jpg";
+import res16 from "./assets/images/residential/res16.jpg";
+
+// Importing images in Boracay
+import main from "./assets/images/boracay/main.jpg";
+import boora from "./assets/images/boracay/boora.jpg";
+import bora from "./assets/images/boracay/bora.jpg";
+import bora1 from "./assets/images/boracay/bora1.jpg";
+import bora2 from "./assets/images/boracay/bora2.jpg";
+import bora3 from "./assets/images/boracay/bora3.jpg";
+import bora4 from "./assets/images/boracay/bora4.jpg";
+import bora5 from "./assets/images/boracay/bora5.jpg";
+import bora6 from "./assets/images/boracay/bora6.jpg";
+import bora7 from "./assets/images/boracay/bora7.jpg";
+import bora8 from "./assets/images/boracay/bora8.jpg";
+import bora9 from "./assets/images/boracay/bora9.jpg";
+import bora10 from "./assets/images/boracay/bora10.jpg";
+import bora11 from "./assets/images/boracay/bora11.jpg";
+
+
+
 
 export default function JcoBuildersSite() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,22 +66,46 @@ export default function JcoBuildersSite() {
   const projects = [
     {
       title: "Modern Residential Home",
-      location: "Taguig City",
+      location: "Pacific Village, Alabang",
       description: "A sleek, modern residential house built for comfort and style.",
       images: [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-        "https://images.unsplash.com/photo-1599423300746-b62533397364",
-        "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+        res1,
+        res3,
+        res4,
+        res5,
+        res6,
+        res7,
+        res8,
+        res9,
+        res10,
+        res11,
+        res12,
+        res13,
+        res14,
+        res15,
+        res16,
       ],
     },
     {
-      title: "Pacific Village",
-      location: "Alabang",
-      description: "Residential Home Renovation.",
+      title: "Boracay",
+      location: "Casitas De Boracay",
+      description: "Renovation and Painting Works",
       images: [
-        "https://images.unsplash.com/photo-1590402494682-cd3fb53b4d14",
-        "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-        "https://images.unsplash.com/photo-1581091012184-7e0cdfbb6791",
+        main,
+        boora,
+        bora,
+        bora1,
+        bora2,
+        bora3,
+        bora4,
+        bora5,
+        bora6,
+        bora7,
+        bora8,
+        bora9,
+        bora10,
+        bora11,
       ],
     },
     {
