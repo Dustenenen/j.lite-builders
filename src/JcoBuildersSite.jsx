@@ -2,6 +2,26 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 
+// Importing images for each sections of placeholder
+import uap14 from "./assets/images/uap/uap14.webp";
+import uap1 from "./assets/images/uap/uap1.jpg";
+import uap2 from "./assets/images/uap/uap2.jpg";
+import uap3 from "./assets/images/uap/uap3.jpg";
+import uap4 from "./assets/images/uap/uap4.jpg";
+import uap5 from "./assets/images/uap/uap5.jpg";
+import uap6 from "./assets/images/uap/uap6.jpg";
+import uap7 from "./assets/images/uap/uap7.jpg";
+import uap8 from "./assets/images/uap/uap8.jpg";
+import uap9 from "./assets/images/uap/uap9.jpg";
+import uap10 from "./assets/images/uap/uap10.jpg";
+import uap11 from "./assets/images/uap/uap11.jpg";
+import uap12 from "./assets/images/uap/uap12.webp";
+import uap13 from "./assets/images/uap/uap13.webp";
+import structural from "./assets/images/uap/structural.jpg";
+import welding from "./assets/images/uap/welding.jpg";
+import metal from "./assets/images/uap/metal.jpg";
+
+
 export default function JcoBuildersSite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -20,9 +40,9 @@ export default function JcoBuildersSite() {
       ],
     },
     {
-      title: "Commercial Building Project",
-      location: "Makati City",
-      description: "A multi-story commercial structure emphasizing efficiency and durability.",
+      title: "Pacific Village",
+      location: "Alabang",
+      description: "Residential Home Renovation.",
       images: [
         "https://images.unsplash.com/photo-1590402494682-cd3fb53b4d14",
         "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
@@ -30,13 +50,24 @@ export default function JcoBuildersSite() {
       ],
     },
     {
-      title: "Apartment Complex",
-      location: "Quezon City",
-      description: "A well-designed apartment complex offering modern living spaces.",
+      title: "United Architects of the Philippines",
+      location: "Quezon City, Tomas Morato",
+      description: "A well-designed renovated complex with attention to modern details.",
       images: [
-        "https://images.unsplash.com/photo-1600585154154-5d1a9f0a7b3e",
-        "https://images.unsplash.com/photo-1600585154046-4458b1d59a5d",
-        "https://images.unsplash.com/photo-1600585154326-8e4b7c98fa1e",
+        uap14,
+        uap1,
+        uap2,
+        uap3,
+        uap4,
+        uap5,
+        uap6,
+        uap7,
+        uap8,
+        uap9,
+        uap10,
+        uap11,
+        uap12,
+        uap13,
       ],
     },
   ];
@@ -160,12 +191,13 @@ export default function JcoBuildersSite() {
           At J.Lite Builders & Construction Services, we craft durable, elegant,
           and modern structures that stand the test of time. With years of
           experience and a passion for quality, we turn visions into reality.
-          Our team takes pride in every build — from residential homes to large-scale
-          commercial projects — ensuring satisfaction, precision, and reliability.
+          Our team takes pride in every build — from residential homes to
+          large-scale commercial projects — ensuring satisfaction, precision,
+          and reliability.
         </motion.p>
       </section>
 
-      {/* Our Projects Section */}
+      {/* Projects */}
       <section id="projects" className="py-24 px-6 bg-gray-100">
         <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
           Our Projects
@@ -200,7 +232,7 @@ export default function JcoBuildersSite() {
         </div>
       </section>
 
-      {/* Lightbox Gallery */}
+      {/* Lightbox */}
       {lightboxOpen && selectedProject && (
         <div className="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-50 p-4">
           <button
@@ -250,7 +282,7 @@ export default function JcoBuildersSite() {
         </div>
       )}
 
-      {/* Services Section */}
+      {/* Services */}
       <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
         <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
           Our Services
@@ -258,16 +290,19 @@ export default function JcoBuildersSite() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Residential Construction",
-              desc: "We build elegant and long-lasting homes that combine comfort and modern design.",
+              title: "Construction & Structural Works",
+              desc: "Delivering quality civil, electrical, and plumbing solutions built on strength and precision.",
+              img: structural,
             },
             {
-              title: "Commercial Development",
-              desc: "From offices to buildings, we deliver strong and efficient commercial spaces.",
+              title: "Finishing & Interior Craftsmanship",
+              desc: "Expert carpentry, welding, painting, and tiling to complete your project with style and durability.",
+              img: welding,
             },
             {
-              title: "Renovation & Design",
-              desc: "Transforming spaces into beautiful, functional areas tailored to your vision.",
+              title: "Metal & Fabrication Services",
+              desc: "Providing metal stud framing, furring, and custom fabrication for modern, reliable builds.",
+              img: metal,
             },
           ].map((service, i) => (
             <motion.div
@@ -276,48 +311,50 @@ export default function JcoBuildersSite() {
               whileInView="visible"
               variants={fadeIn}
               transition={{ duration: 0.8 + i * 0.2 }}
-              className="bg-white rounded-xl p-8 shadow-md hover:shadow-2xl transition"
+              className="relative rounded-xl overflow-hidden h-80 cursor-pointer group"
             >
-              <h4 className="font-semibold text-2xl text-[#132440] mb-3 text-center">
-                {service.title}
-              </h4>
-              <p className="text-gray-600 text-center">{service.desc}</p>
+              <img
+                src={service.img}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover brightness-50 group-hover:brightness-40 transition duration-500"
+              />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-8">
+                <h4 className="font-semibold text-2xl mb-3">
+                  {service.title}
+                </h4>
+                <p className="max-w-sm text-sm opacity-90">{service.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-gray-100">
-        <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
-          Contact Us
-        </h3>
-        <form className="max-w-3xl mx-auto grid gap-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="border p-3 rounded-lg"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="border p-3 rounded-lg"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows="5"
-            className="border p-3 rounded-lg"
-          ></textarea>
-          <button className="bg-[#16476A] hover:bg-[#132440] text-white py-3 rounded-lg">
-            Send Message
-          </button>
-        </form>
+      <section id="contact" className="py-20 bg-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+          <p className="text-gray-600 mb-4">
+            Interested in working with us? Get in touch today.
+          </p>
+          <p className="text-gray-800 font-medium">
+            Email:{" "}
+            <a
+              href="mailto:info@jlitebuilders.com"
+              className="text-blue-700"
+            >
+              jlitebuilders@gmail.com
+            </a>
+          </p>
+          <p className="text-gray-800 font-medium">Phone: +63 977-366-4329</p>
+        </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-[#16476A] text-white text-center py-6">
         <p>
-          &copy; {new Date().getFullYear()} J.Lite Builders & Construction Services. All rights reserved.
+          &copy; {new Date().getFullYear()} J.Lite Builders & Construction
+          Services. All rights reserved.
         </p>
       </footer>
     </div>
