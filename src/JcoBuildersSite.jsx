@@ -405,7 +405,7 @@ export default function JcoBuildersSite() {
               jlitebuilders@gmail.com
             </a>
           </p>
-          <p className="text-gray-800 font-medium">Phone: +63 977-366-4329</p>
+          <p className="text-gray-800 font-medium">Phone: +63 9494-9664-329</p>
         </div>
       </section>
 
