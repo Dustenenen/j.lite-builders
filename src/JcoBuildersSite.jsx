@@ -54,8 +54,8 @@ import bora9 from "./assets/images/boracay/bora9.jpg";
 import bora10 from "./assets/images/boracay/bora10.jpg";
 import bora11 from "./assets/images/boracay/bora11.jpg";
 
-
-
+// Import logo
+import jlite from "./assets/images/jlite.png";
 
 export default function JcoBuildersSite() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -161,17 +161,25 @@ export default function JcoBuildersSite() {
   return (
     <div className="font-sans scroll-smooth">
       {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/20 backdrop-blur-lg border-b border-white/10 shadow-sm">
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="text-2xl font-bold text-[#16476A]">
-            J.Lite Builders & Construction Services
-          </h1>
+          <div className="flex items-center space-x-3">
+            <img
+              src={jlite}
+              alt="J.Lite Logo"
+              className="w-10 h-10 object-contain opacity-85 drop-shadow-sm"
+            />
+            <h1 className="text-2xl font-bold text-[#16476A]">
+              J.Lite Builders & Construction Services
+            </h1>
+          </div>
+
           <nav className="hidden md:flex space-x-6">
             {["Home", "About", "Projects", "Services", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="text-gray-700 hover:text-[#132440] transition-colors"
+                className="text-gray-800 hover:text-[#16476A] transition-colors"
               >
                 {link}
               </a>
@@ -181,13 +189,14 @@ export default function JcoBuildersSite() {
             {menuOpen ? <X /> : <Menu />}
           </button>
         </div>
+
         {menuOpen && (
-          <div className="bg-white shadow-md md:hidden flex flex-col space-y-4 p-4">
+          <div className="bg-white/80 backdrop-blur-md md:hidden flex flex-col space-y-4 p-4 shadow-md">
             {["Home", "About", "Projects", "Services", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="text-gray-700 hover:text-[#7B542F]"
+                className="text-gray-700 hover:text-[#16476A]"
                 onClick={() => setMenuOpen(false)}
               >
                 {link}
@@ -256,7 +265,7 @@ export default function JcoBuildersSite() {
         </motion.p>
       </section>
 
-      {/* Projects */}
+      {/* Projects Section */}
       <section id="projects" className="py-24 px-6 bg-gray-100">
         <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
           Our Projects
@@ -323,25 +332,10 @@ export default function JcoBuildersSite() {
               <ChevronRight size={30} />
             </button>
           </div>
-
-          {/* Thumbnails */}
-          <div className="flex gap-3 mt-6 flex-wrap justify-center">
-            {selectedProject.images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt="thumbnail"
-                onClick={() => setCurrentImage(i)}
-                className={`w-24 h-16 object-cover rounded-md cursor-pointer transition border-2 ${
-                  i === currentImage ? "border-white" : "border-transparent"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       )}
 
-      {/* Services */}
+      {/* Services Section */}
       <section id="services" className="py-24 px-6 max-w-6xl mx-auto">
         <h3 className="text-4xl font-extrabold text-center text-[#16476A] mb-12">
           Our Services
@@ -392,20 +386,19 @@ export default function JcoBuildersSite() {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-6 text-[#16476A]">Contact Us</h2>
           <p className="text-gray-600 mb-4">
             Interested in working with us? Get in touch today.
           </p>
           <p className="text-gray-800 font-medium">
             Email:{" "}
-            <a
-              href="mailto:jlitebuilders@gmail.com"
-              className="text-blue-700"
-            >
+            <a href="mailto:jlitebuilders@gmail.com" className="text-blue-700">
               jlitebuilders@gmail.com
             </a>
           </p>
-          <p className="text-gray-800 font-medium">Phone: +63 9494-9664-329</p>
+          <p className="text-gray-800 font-medium mt-2">
+            Phone: +63 9494-9664-329
+          </p>
         </div>
       </section>
 
