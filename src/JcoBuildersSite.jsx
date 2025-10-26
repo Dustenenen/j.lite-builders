@@ -397,7 +397,7 @@ export default function JcoBuildersSite() {
             </a>
           </p>
           <p className="text-gray-800 font-medium mt-2">
-            Phone: +63 94-4966-729
+            Phone: +63 949-4966-729
           </p>
         </div>
       </section>
