@@ -54,8 +54,11 @@ import bora9 from "./assets/images/boracay/bora9.jpg";
 import bora10 from "./assets/images/boracay/bora10.jpg";
 import bora11 from "./assets/images/boracay/bora11.jpg";
 
-// Import logo
+// Logo
 import jlite from "./assets/images/jlite.png";
+
+// Body
+import body2 from "./assets/images/boracay/body2.jpg";
 
 export default function JcoBuildersSite() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -169,10 +172,15 @@ export default function JcoBuildersSite() {
               alt="J.Lite Logo"
               className="w-10 h-10 object-contain opacity-85 drop-shadow-sm"
             />
-            <h1 className="text-2xl font-bold text-[#16476A]">
-              J.Lite Builders & Construction Services
-            </h1>
-          </div>
+            <div className="flex flex-col leading-tight">
+    <span className="text-lg font-extrabold text-[#0C2340] tracking-tight">
+      J.Lite Builders
+    </span>
+    <span className="text-sm text-gray-700 font-medium">
+      & Construction Services
+    </span>
+  </div>
+</div>
 
           <nav className="hidden md:flex space-x-6">
             {["Home", "About", "Projects", "Services", "Contact"].map((link) => (
@@ -206,37 +214,48 @@ export default function JcoBuildersSite() {
         )}
       </header>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="h-screen flex flex-col justify-center items-center bg-gray-100 text-center px-4"
-      >
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-extrabold text-[#16476A]"
-        >
-          Building Dreams with Precision
-        </motion.h2>
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeIn}
-          transition={{ duration: 1 }}
-          className="text-gray-700 mt-4 max-w-2xl"
-        >
-          Your trusted partner in construction excellence, delivering quality,
-          reliability, and value in every project.
-        </motion.p>
-        <a
-          href="#projects"
-          className="mt-6 px-6 py-3 bg-[#16476A] text-white rounded-lg hover:bg-[#132440] transition"
-        >
-          View Projects
-        </a>
-      </section>
+    {/* Hero Section */}
+<section
+  id="home"
+  className="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden"
+  style={{
+    backgroundImage: `url(${body2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="absolute inset-0 bg-black/40"></div> {/* overlay for readability */}
+  
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    variants={fadeIn}
+    transition={{ duration: 0.8 }}
+    className="relative z-10"
+  >
+    <h2 className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+      Building Dreams with Precision
+    </h2>
+    <motion.p
+      initial="hidden"
+      whileInView="visible"
+      variants={fadeIn}
+      transition={{ duration: 1 }}
+      className="text-gray-200 mt-4 max-w-2xl mx-auto"
+    >
+      Your trusted partner in construction excellence, delivering quality,
+      reliability, and value in every project.
+    </motion.p>
+    <a
+      href="#projects"
+      className="mt-6 inline-block px-6 py-3 bg-[#16476A] text-white rounded-lg hover:bg-[#132440] transition shadow-md"
+    >
+      View Projects
+    </a>
+  </motion.div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
@@ -363,7 +382,7 @@ export default function JcoBuildersSite() {
               initial="hidden"
               whileInView="visible"
               variants={fadeIn}
-              transition={{ duration: 0.8 + i * 0.2 }}
+              transition={{ duration: 0.9 + i * 0.2 }}
               className="relative rounded-xl overflow-hidden h-80 cursor-pointer group"
             >
               <img
